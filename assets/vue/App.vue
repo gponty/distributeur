@@ -5,20 +5,20 @@
         <table class="table col-7">
             <thead>
             <tr>
-                <th scope="col">Produit</th>
-                <th scope="col">Qte restante</th>
-                <th scope="col">Qte</th>
-                <th scope="col" class="text-center" colspan="2">Actions</th>
+                <th style="width: 40%" scope="col">Produit</th>
+                <th style="width: 15%" scope="col">Qte restante</th>
+                <th style="width: 15%" scope="col">Qte</th>
+                <th style="width: 30%" scope="col" class="text-center" colspan="2">Actions</th>
             </tr>
             </thead>
             <tr v-for="produit in listeProduit">
-                <td class="col-3">{{ produit.nomProduit }}</td>
-                <td class="col-3">{{ produit.qteRestante }}</td>
-                <td class="col-2"><input class="form-control" type="text" width="3" v-model="produit.qteToUpdate"></td>
-                <td class="col-2">
+                <td>{{ produit.nomProduit }}</td>
+                <td>{{ produit.qteRestante }}</td>
+                <td><input class="form-control" type="text" v-model="produit.qteToUpdate"></td>
+                <td>
                     <button class="btn btn-primary" v-on:click="addActivite('A',produit)">Acheter</button>
                 </td>
-                <td class="col-2">
+                <td>
                     <button class="btn btn-success" v-on:click="addActivite('V',produit)">Vendre</button>
                 </td>
             </tr>
