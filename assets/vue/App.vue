@@ -2,23 +2,23 @@
     <div class="container">
         <h1>Distributeur de friandise</h1>
         <notifications group="foo" />
-        <table class="table col-6">
+        <table class="table col-7">
             <thead>
             <tr>
                 <th scope="col">Produit</th>
                 <th scope="col">Qte restante</th>
-                <th scope="col">Qte à modifier</th>
+                <th scope="col">Qte</th>
                 <th scope="col" class="text-center" colspan="2">Actions</th>
             </tr>
             </thead>
             <tr v-for="produit in listeProduit">
-                <td>{{ produit.nomProduit }}</td>
-                <td class="col-2">{{ produit.qteRestante }}</td>
-                <td><input class="form-control" type="text" width="3" v-model="produit.qteToUpdate"></td>
-                <td>
+                <td class="col-3">{{ produit.nomProduit }}</td>
+                <td class="col-3">{{ produit.qteRestante }}</td>
+                <td class="col-2"><input class="form-control" type="text" width="3" v-model="produit.qteToUpdate"></td>
+                <td class="col-2">
                     <button class="btn btn-primary" v-on:click="addActivite('A',produit)">Acheter</button>
                 </td>
-                <td>
+                <td class="col-2">
                     <button class="btn btn-success" v-on:click="addActivite('V',produit)">Vendre</button>
                 </td>
             </tr>
